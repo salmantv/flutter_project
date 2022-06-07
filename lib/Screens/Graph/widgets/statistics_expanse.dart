@@ -67,7 +67,7 @@ class _ExpansewidgetState extends State<Expansewidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               const Text(
-                                "Minimum 3 expanse transaction",
+                                "Minimum two expanse transaction",
                                 style: TextStyle(
                                     color: Colors.black87, fontSize: 16),
                               ),

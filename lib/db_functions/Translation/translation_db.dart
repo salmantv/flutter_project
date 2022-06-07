@@ -34,6 +34,12 @@ class Tracnsltion implements Transactiom_db {
     final _alllist = await gettranction();
 
     Future.forEach(_alllist, (TranclationModel element) {
+      if (element.amount == 0.0) {
+        deleteingTrastions(element);
+      }
+    });
+
+    Future.forEach(_alllist, (TranclationModel element) {
       if (element.datetime.day == DateTime.now().day) {
         Tracnsltion.instense.todaynotfier.value.add(element);
       } else if (element.datetime.day == DateTime.now().day - 1 &&

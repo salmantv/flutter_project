@@ -30,7 +30,7 @@ class _DetailsaddingState extends State<Detailsadding> {
   final dateshowing = TextEditingController();
   final monthshwing = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  late final amoutparsed;
+  double amoutparsed = 0;
 
   @override
   void initState() {
@@ -71,12 +71,6 @@ class _DetailsaddingState extends State<Detailsadding> {
                 Form(
                   key: formKey,
                   child: TextFormField(
-                    validator: ((value) {
-                      if (value!.isEmpty || value == null) {
-                        return 'Amount is empty';
-                      }
-                      return null;
-                    }),
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(15),
                     ],
@@ -185,12 +179,16 @@ class _DetailsaddingState extends State<Detailsadding> {
                     onPressed: () async {
                       formKey.currentState!.validate();
                       await transltionsadding();
-                      selecteddate == null || selectedcategory == null
+                      selecteddate == null ||
+                              selectedcategory == null ||
+                              amountcondroller.text == '' ||
+                              amountcondroller.text == '0'
                           ? ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                  duration: Duration(seconds: 1),
+                                  duration: Duration(seconds: 2),
                                   behavior: SnackBarBehavior.floating,
-                                  content: Text("Something wrong")))
+                                  backgroundColor: Colors.red,
+                                  content: Text(" Please fill the text box")))
                           : Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(builder: (context) {
                               return const Controll();
@@ -216,12 +214,6 @@ class _DetailsaddingState extends State<Detailsadding> {
 
     if (selecteddate == null) {
       return;
-    }
-
-    if (amoutparsed == 0) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          behavior: SnackBarBehavior.floating,
-          content: Text("You forgot to add amount")));
     }
 
     final value = TranclationModel(
