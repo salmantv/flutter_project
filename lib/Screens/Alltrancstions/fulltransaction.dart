@@ -32,13 +32,14 @@ class _DatesbulidingState extends State<Datesbuliding> {
               }));
             },
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
                   "assets/emptydata.png",
                   height: 22.5.h,
                 ),
                 const Text(
-                  "No transaction now trying To add",
+                  "No transaction now trying to add",
                   style: TextStyle(color: Colors.black45, fontSize: 16),
                 )
               ],

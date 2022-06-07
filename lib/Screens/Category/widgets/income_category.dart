@@ -148,7 +148,7 @@ class _IncomecategoyState extends State<Incomecategoy> {
                   MycustomTextfild(
                     TextEdigcontroller: Texteditcondroller,
                     keyboddesble: true,
-                    hinttexts: "Categoryname",
+                    hinttexts: "Category name",
                     icon: MyFlutterApp.pie_chart,
                   ),
                   const SizedBox(

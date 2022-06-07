@@ -156,7 +156,7 @@ class ExpanseCategoryState extends State<ExpanseCategory> {
                   MycustomTextfild(
                     TextEdigcontroller: Texteditcondroller,
                     keyboddesble: true,
-                    hinttexts: "Category Name",
+                    hinttexts: "Category name",
                     icon: MyFlutterApp.pie_chart,
                   ),
                   const SizedBox(

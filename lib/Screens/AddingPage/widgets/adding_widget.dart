@@ -248,30 +248,34 @@ class _DetailsaddingState extends State<Detailsadding> {
                     Categoeydb.instense.IncomeCategory.value.isEmpty
                 ? Column(
                     children: [
-                      Column(
-                        children: [
-                          SizedBox(
-                            height: 4.h,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 40, right: 20),
-                            child: ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStateProperty.all(Colors.white),
-                                ),
-                                onPressed: () {
-                                  Navigator.of(context)
-                                      .push(MaterialPageRoute(builder: (ctx) {
-                                    return const Category_Page();
-                                  }));
-                                },
-                                child: const Text(
-                                    "Category is empty trying to add",
-                                    style: TextStyle(color: Colors.black87))),
-                          )
-                        ],
+                      SizedBox(
+                        height: 7.h,
                       ),
+                      SizedBox(
+                        width: 32.h,
+                        child: TextButton(
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (ctx) {
+                                return const Category_Page();
+                              }));
+                            },
+                            child: const Text(
+                              "Sorry ! we can found any Category here ,"
+                              " Now you can add category ,\nif you want add click here and create category ",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 17),
+                            )),
+                      ),
+                      Center(
+                        child: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.add,
+                              size: 30,
+                              color: Colors.white,
+                            )),
+                      )
                     ],
                   )
                 : nowcategory == categorytype.expanse &&
@@ -279,15 +283,11 @@ class _DetailsaddingState extends State<Detailsadding> {
                     ? Column(
                         children: [
                           SizedBox(
-                            height: 2.h,
+                            height: 7.h,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 20, top: 40),
-                            child: ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStateProperty.all(Colors.white),
-                                ),
+                          SizedBox(
+                            width: 32.h,
+                            child: TextButton(
                                 onPressed: () {
                                   Navigator.of(context)
                                       .push(MaterialPageRoute(builder: (ctx) {
@@ -295,9 +295,21 @@ class _DetailsaddingState extends State<Detailsadding> {
                                   }));
                                 },
                                 child: const Text(
-                                    "Category is empty trying to add",
-                                    style: TextStyle(color: Colors.black87))),
+                                  "Sorry ! we can found any Category here ,"
+                                  " Now you can add category ,\nif you want add click here and create category ",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 17),
+                                )),
                           ),
+                          Center(
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.add,
+                                  size: 30,
+                                  color: Colors.white,
+                                )),
+                          )
                         ],
                       )
                     : ValueListenableBuilder(

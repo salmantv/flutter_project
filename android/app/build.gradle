@@ -33,6 +33,9 @@ def keystorePropertiesFile = rootProject.file('key.properties')
 
 android {
     compileSdkVersion flutter.compileSdkVersion
+     defaultConfig {
+        multiDexEnabled true
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -54,6 +57,10 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+    }
+
+    dependencies {
+    implementation 'com.android.support:multidex:1.0.3'
     }
 
     signingConfigs {

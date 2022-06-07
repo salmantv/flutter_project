@@ -58,7 +58,7 @@ class _StatisticsState extends State<Statistics> {
                           size: 20,
                         ),
                         Text(
-                          "Overviwe",
+                          "overview",
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.w400),
                         ),

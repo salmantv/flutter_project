@@ -9,7 +9,6 @@ import '../../db_functions/Category_db/category_db.dart';
 import '../../db_functions/Translation/translation_db.dart';
 import '../../icons/myicons.dart';
 import '../Globlefunctions/globle.dart';
-import '../Home/widget/controllroom.dart';
 import '../Splshscreen/splash.dart';
 
 class Settings extends StatefulWidget {
@@ -24,7 +23,6 @@ class _SettingsState extends State<Settings> {
   void initState() {
     super.initState();
     NotificationApi().init(initScheduled: true);
-    listenNotifications();
   }
 
   void listenNotifications() {
@@ -33,7 +31,7 @@ class _SettingsState extends State<Settings> {
 
   onClickNotifications(String? payload) {
     Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => const Controll(),
+      builder: (context) => SecondScreen(),
     ));
     return null;
   }
@@ -98,7 +96,7 @@ class _SettingsState extends State<Settings> {
                 },
                 child: MylistTile(
                   icon: MyFlutterApp.user_1,
-                  name: 'Contect me',
+                  name: 'Contact us',
                 ),
               ),
               InkWell(
@@ -110,7 +108,7 @@ class _SettingsState extends State<Settings> {
                 },
                 child: MylistTile(
                   icon: MyFlutterApp.undo,
-                  name: 'Reset',
+                  name: 'Reset app',
                 ),
               ),
               GestureDetector(
